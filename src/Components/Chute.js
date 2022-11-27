@@ -4,13 +4,12 @@ let chute = '';
 
 export default function Chute(prop){
     const [data, setData]=useState(null)
+    
    
 
     function pegarDados(entrada, sinal){
         setData(entrada)
-        
         if(!sinal){
-            console.log("sla man")
             chute = (entrada.target.value)
         }
         else

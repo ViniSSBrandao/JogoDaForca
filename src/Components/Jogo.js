@@ -6,7 +6,7 @@ export default function Jogo(){
     
     return(
         <div className='jogo'>
-        <Forca />
+        <Forca erro={0} />
         <Botao />
         
         </div>
