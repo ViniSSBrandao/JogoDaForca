@@ -1,0 +1,50 @@
+
+img{
+    width: 400px;
+    margin-top: 59px;
+    margin-left: 38px;
+}
+
+.jogo{
+display: flex;
+}
+
+.letra{
+    display: flex;
+    color: #798a9f;
+    width: 40px;
+    height: 40px;
+    background-color:#9faab5;
+    margin-left: 11px;
+    align-items: center;
+    justify-content:center;
+    border-radius: 4px;
+}
+
+
+
+.comecar{
+    width: 200px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #27ae60;
+    color: white;
+    font-weight: 700;
+    position:absolute;
+    right: 53px;
+    top: 89px;
+   
+}
+
+.alfabeto{
+    margin: auto;
+    margin-top: 70px;
+    width: 686px;
+    height: 91px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 11px;
+    justify-content: space-between;
+    align-content: space-between;
+}
