@@ -1,39 +1,40 @@
 import React, {useState} from "react"
-let espacos = [], palavra = []
-let len, tentativa, update
+const palavra = []
+let len
 export default function Acertos(prop){
-   let acertos=prop.tentativa[0]
-  
- 
-   if(!acertos) {
-       len = prop.palavra.length
-       for(let i=0; i<len;i++){
-         
-           espacos[i]= '_ '
-          
-           palavra[i]= prop.palavra[i]
-           console.log('display: '+palavra)  
-       }  
-   }
-   else{
-    for(let i=0; i<espacos.length; i++){
+    
+   
+    if(prop.palavra) {
+        len = prop.palavra.length
+        for(let i=0; i<len;i++){
+            palavra[i]= '_ '
+            
+        }
         
-        if(!espacos[i]){
-            espacos[i]=' _ '
+    }
+
+    if(prop.acertos){
+        for(let i=0; i<len;i++){
+            if(prop.acertos[i]){
+            palavra.splice(i, 1, prop.acertos[i] + ' ')
         }
     }
-        espacos=prop.tentativa[0]
-      
-   }
- 
-  
-   console.log()
-   return(
-       <>
-       <div className="acertos">
-           <p >{espacos}</p>
-       </div>
-       </>
-   )
+    }
+
+    const [display, setDisplay] = useState(palavra)
+    
+
+    function trocaPalavra(){
+        setDisplay()
+    }
+    
+    console.log(display)
+    return(
+        <>
+        <div className="acertos">
+            <p onClick={trocaPalavra}>{display}</p>
+        </div>
+        </>
+    )
 }
 

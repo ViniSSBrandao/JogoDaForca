@@ -6,16 +6,15 @@ import { useState } from "react"
 
 export default function Jogo(prop){
     
-    
-    let tentativa
-    
-    
+    const [botao, setBotao] = useState(0)
 
+    console.log(prop.acertos)
+    
     return(
         <div className='jogo'>
-        <Forca erro={0} />
+        <Forca erro={prop.erros} />
         <button class="comecar"  onClick={() => prop.apertouBotao('awa')}>Escolher Palava</button>
-        <Acertos palavra={prop.palavra} tentativa={prop.tentativa} />
+        <Acertos palavra={prop.palavra} acertos={prop.acertos}/>
         </div>
     )
 }
