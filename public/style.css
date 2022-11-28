@@ -98,3 +98,12 @@ display: flex;
     text-align: center;
 }
 
+.reload{
+    position: absolute;
+    right: 61px;
+    background-color: rgb(163, 42, 42);
+    border: none;
+    border-radius: 5px;
+    top:180px;
+    color: white;
+}

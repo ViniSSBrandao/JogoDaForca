@@ -7,14 +7,16 @@ import { useState } from "react"
 export default function Jogo(prop){
     
     const [classe, setClasse] = useState('')
-
+    const [iniciar, setIniciar] = useState(0)
     
     console.log(prop.acertos)
     
+   
     return(
         <div className='jogo'>
         <Forca erro={prop.erros} />
-        <button class="comecar"  onClick={() => prop.apertouBotao('awa')}>Escolher Palava</button>
+        <button class="comecar" data-test='choose-word'  onClick={() => {prop.apertouBotao('awa')}}>Escolher Palava</button>
+        <button className="reload" onClick={() => window.location.reload(false)}>Jogar novamente</button>
         <Acertos palavra={prop.palavra} acertos={prop.acertos} classe={classe} resultado={prop.resultado}/>
         </div>
     )

@@ -35,7 +35,7 @@ export default function Acertos(prop){
     
     return(
         <>
-        <div className="acertos">
+        <div className="acertos" data-test='word' data-answer={prop.palavra}>
             <p onClick={trocaPalavra} className={prop.resultado}>{display}</p>
         </div>
         </>

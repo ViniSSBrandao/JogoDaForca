@@ -12,7 +12,7 @@ export default function Forca(prop){
 
     return(
     <>
-    <img src={forcas[prop.erro]}/>
+    <img data-test='game-image' src={forcas[prop.erro]}/>
     </>
     )
 }

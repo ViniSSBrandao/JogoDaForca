@@ -41,6 +41,7 @@ function App() {
         tentativa={tentativa=>setTentativa(tentativa)}
         erros={erros=>setErros(erros)}
         resultado={resultado=>setResultado(resultado)}
+        onChange={console.log(resultado)}
         />)}
       </div>
 

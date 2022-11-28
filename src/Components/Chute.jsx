@@ -41,7 +41,7 @@ export default function Chute(prop){
         <>
         <div className="chute">
             <h1>Ja sei a palavra!</h1>
-            <input type='text' onChange={pegarDados} placeholder="tente seu melhor!" />
+            <input type='text' onChange={pegarDados} placeholder="tente seu melhor!" data-test='guess-input' />
             <button type='submit' className="chutebotao" onClick={testar} onChange={prop.resultado(resultado)} > chutar!</button>
         </div>
         </>
