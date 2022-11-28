@@ -6,7 +6,7 @@ import { useState } from "react"
 
 export default function Jogo(prop){
     
-    const [botao, setBotao] = useState(0)
+    console.log(prop.tentativa)
 
     
 
