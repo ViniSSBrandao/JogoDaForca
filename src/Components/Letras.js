@@ -1,12 +1,15 @@
 import Forca from "./Jogo/Forca"
 let letraClicada = [], acertos = [], erros = []
-let palavra
+let palavra, estadoJogo, classe
 
 export default function Letras(prop){
-    
+    console.log(estadoJogo)
+    !prop.estadoJogo ? estadoJogo = 0 : estadoJogo = 1
     palavra = prop.palavra
         function clicouLetra(entrada){
-            if(letraClicada.includes(entrada)){
+
+            if(estadoJogo){
+                if(letraClicada.includes(entrada)){
 
             }
             else {
@@ -15,12 +18,16 @@ export default function Letras(prop){
             }   
         }
 
+        }
+
+    estadoJogo ? classe = ['letra ativada'] : classe = ['letra']
+
         
     return(
         <>
         
         <div className="tampabotao"></div>
-        <button className="letra" onClick={() => clicouLetra(prop.letra)}>
+        <button className={classe}  onClick={() => clicouLetra(prop.letra)} >
         {prop.letra}
         </button>
        
@@ -49,6 +56,7 @@ function verificaLetra(letra, palavra){
     }
     else{
         erros.push(letra)
+        erros.length>=6 ? console.log('perdeu') : console.log('errou')
     }
 
     console.log ("erros: ", erros, "acertos: ", acertos)

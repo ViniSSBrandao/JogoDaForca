@@ -22,7 +22,15 @@ display: flex;
     border:none;
 }
 
+.ativada{
+    color: #39739d;
+    background-color: #e1ecf4;
+}
 
+.usada{
+    color: #798a9f;
+    background-color:#9faab5;
+}
 
 .comecar{
     width: 200px;
@@ -48,4 +56,10 @@ display: flex;
     padding-right: 11px;
     justify-content: space-between;
     align-content: space-between;
+}
+
+.acertos{
+    position: absolute;
+    right: 61px;
+    top: 431px;
 }

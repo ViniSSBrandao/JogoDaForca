@@ -1,14 +1,20 @@
 import Forca from "./Jogo/Forca"
-import Botao from "./Jogo/Botao"
-import Letras from "./Letras"
 
-export default function Jogo(){
+import Letras from "./Letras"
+import Acertos from "./Jogo/Acertos"
+import { useState } from "react"
+
+export default function Jogo(prop){
     
+    const [botao, setBotao] = useState(0)
+
+    
+
     return(
         <div className='jogo'>
         <Forca erro={0} />
-        <Botao />
-        
+        <button class="comecar"  onClick={() => prop.apertouBotao('awa')}>Escolher Palava</button>
+        <Acertos palavra={prop.palavra} />
         </div>
     )
 }
