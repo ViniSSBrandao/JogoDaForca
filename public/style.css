@@ -70,4 +70,31 @@ display: flex;
     position: absolute;
     right: 61px;
     top: 431px;
+    font-size: 50px;
 }
+
+.chute{
+    margin: auto;
+    display: flex;
+    width: 562px;
+    margin-top: 50px;
+    height: 40px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chute button{
+    
+    width: 100px;
+ 
+    background-color: #e1ecf4;
+   
+    
+}
+
+.chute input{
+    height: 100%;
+    text-align: center;
+}
+
