@@ -22,22 +22,35 @@ function App() {
 
   const [erros, setErros] = useState(0)
 
+  const [resultado, setResultado] = useState('')
+
   
   
   
   
   return (
     <div className="App">
-      <Jogo palavra={palavra} acertos={tentativa} erros={erros} apertouBotao={iniciar => setIniciar(iniciar)}/>
+     
+      <Jogo palavra={palavra} acertos={tentativa} erros={erros} resultado={resultado} apertouBotao={iniciar => setIniciar(iniciar)}/>
+     
       <div className="alfabeto">
-      {alphabet.map((n) => <Letras 
-      letra={n}
-       estadoJogo={iniciar}
+        {alphabet.map((n) => <Letras 
+        letra={n}
+        estadoJogo={iniciar}
         palavra={palavraArray}
-         tentativa={tentativa=>setTentativa(tentativa)}
-          erros={erros=>setErros(erros)}/>)}
+        tentativa={tentativa=>setTentativa(tentativa)}
+        erros={erros=>setErros(erros)}
+        resultado={resultado=>setResultado(resultado)}
+        />)}
       </div>
-      <Chute palavra={palavra} chute={tentativa=>setTentativa(tentativa)} erros={erros => setErros(erros)} />
+
+      <Chute 
+      palavra={palavra} 
+      chute={tentativa=>setTentativa(tentativa)} 
+      erros={erros => setErros(erros)} 
+      resultado={resultado=>setResultado(resultado)}
+       />
+
     </div>
   );
 }

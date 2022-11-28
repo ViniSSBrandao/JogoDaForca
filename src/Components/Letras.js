@@ -3,6 +3,7 @@ import Forca from "./Jogo/Forca"
 let letraClicada = [], acertos = [], erros = 0
 let palavra, estadoJogo, classe
 let copiaCerto, copiaErrado
+let resultado = ''
 
 export default function Letras(prop){
     console.log(estadoJogo)
@@ -34,7 +35,7 @@ export default function Letras(prop){
         <>
         
         
-        <button className={clicou} onClick={() => {clicouLetra(prop.letra) ; prop.tentativa(copiaCerto); prop.erros(erros)}} >
+        <button className={clicou} onClick={() => {clicouLetra(prop.letra) ; prop.tentativa(copiaCerto); prop.erros(erros); prop.resultado(resultado)}} >
         {prop.letra}
         </button>
        
@@ -60,12 +61,18 @@ function verificaLetra(letra, palavra){
             }
             copiaCerto = [...acertos]
         }
-        acertos.includes('') ? console.log('ta quase') : console.log('acertou')
+        acertos.includes('') ? console.log('ta quase') : resultado = 'acertou'
         
     }
     else{
         erros++
-        erros.length>=6 ? console.log('perdeu') : console.log('errou')
+        if(erros>=6){
+             resultado = 'errou'
+              copiaCerto = [...palavra]
+            }
+            else {
+                console.log(erros)
+            }
         
     }
 

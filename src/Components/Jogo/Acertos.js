@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 const palavra = []
-let len
+let len, classe
 export default function Acertos(prop){
     
    
@@ -21,18 +21,22 @@ export default function Acertos(prop){
     }
     }
 
+    
+    
     const [display, setDisplay] = useState(palavra)
+    
+    
     
 
     function trocaPalavra(){
         setDisplay()
     }
     
-    console.log(display)
+    
     return(
         <>
         <div className="acertos">
-            <p onClick={trocaPalavra}>{display}</p>
+            <p onClick={trocaPalavra} className={prop.resultado}>{display}</p>
         </div>
         </>
     )
