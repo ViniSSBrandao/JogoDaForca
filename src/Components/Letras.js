@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Forca from "./Jogo/Forca"
 let letraClicada = [], acertos = [], erros = []
-let palavra, estadoJogo, classe, tentativas
+let palavra, estadoJogo, classe, tentativas = ''
 
 export default function Letras(prop){
     
@@ -20,7 +20,7 @@ export default function Letras(prop){
                 tentativas = verificaLetra(entrada, palavra)
                 letraClicada.push(entrada)
                 setClicou('letra')
-                console.log(prop.info)
+                console.log('tentativas: '+tentativas+acertos+erros)
                 
             }
               
@@ -52,18 +52,21 @@ function verificaLetra(letra, palavra){
         for(let i=0; i<palavra.length; i++){
             if(palavra[i] === letra){
                 if(!acertos[i]){
-                    acertos.splice(i, 1, letra)
+                    acertos.splice(i, 0, letra)
+                    console.log(0)
                 }
                 else{
                     acertos.splice(i, 0, letra)
+                    console.log(1)
                 }
             }
             else if(!acertos[i]){
                 acertos[i]=''
+                console.log(2)
             }
         }
         
-        acertos.includes('') ? console.log('ta quase') : console.log('acertou')
+        acertos.includes('_','') ? console.log('ta quase' + acertos) : console.log('acertou ' + acertos)
         return ([acertos, erros.length]);
     }
     else{
