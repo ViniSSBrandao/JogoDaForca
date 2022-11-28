@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 let chute = '';
+let resultado =''
 
 export default function Chute(prop){
     const [data, setData]=useState(null)
@@ -17,6 +18,7 @@ export default function Chute(prop){
              VerificaChute(chute, prop.palavra)
              console.log(chute)
         }
+        
     }
     
     function testar(){
@@ -25,7 +27,14 @@ export default function Chute(prop){
     
     function VerificaChute(chute, palavra){
         chute = chute.toLowerCase()
-        chute == palavra ? prop.chute(chute) : prop.erros(6)
+        if(chute == palavra) {
+            resultado = 'acertou'
+            prop.chute(chute)
+        } 
+        else{
+            resultado='errou'
+            prop.erros(6)
+        }
     }
 
     return(
@@ -33,7 +42,7 @@ export default function Chute(prop){
         <div className="chute">
             <h1>Ja sei a palavra!</h1>
             <input type='text' onChange={pegarDados} placeholder="tente seu melhor!" />
-            <button type='submit' className="chute" onClick={testar} > chutar!</button>
+            <button type='submit' className="chute" onClick={testar} onChange={prop.resultado(resultado)} > chutar!</button>
         </div>
         </>
     )
